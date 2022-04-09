@@ -25,7 +25,7 @@ function hotPotato(elementsList, num) {
 
         }
 
-        // Saiu do loop então chegou ao valor inserido na função:
+        // Saiu do loop então chegou ao valor inserido na função:                                                  
         eliminatedList.push(queue.deque());
 
     }
