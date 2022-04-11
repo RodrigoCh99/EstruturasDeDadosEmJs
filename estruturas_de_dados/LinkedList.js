@@ -120,7 +120,11 @@ module.exports = class LinkedList {
 
             }
 
+            // decrementando o contador
             this.count--;
+            
+            // retornando o elemento removido
+            return current.element;
 
         }
         // caso index não esteja no intervalo:
