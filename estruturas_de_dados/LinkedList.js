@@ -116,7 +116,7 @@ module.exports = class LinkedList {
                 current = previous.next;
 
                 // o item seguinte ao anterior recebe o proxio do atual
-                previsous.next = current.next
+                previous.next = current.next
 
             }
 
