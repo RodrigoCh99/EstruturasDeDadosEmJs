@@ -1,14 +1,14 @@
-// Classe nó para a linked list ou lista ligada:
-module.exports = class Node {
+// Classe nó para a linked list ou Lista Encadeada:
+class Node {
 
     // Função construtora de Objetos:
     constructor(element) {
 
         // prorpiedade que controla o elemento do node:
-        this.element = element
+        this.element = element;
 
         // propriedade que aponta para o próximo nó na lista:
-        this.next = undefined        
+        this.next = undefined;        
     }
 }
 
@@ -20,7 +20,7 @@ function defaultEquals(a, b) {
 }
 
 // Classe lista ligada:
-module.exports = class LinkedList {
+class LinkedList {
 
     // Função construtora de Objetos:
     constructor(equalsFn = defaultEquals) {
@@ -37,37 +37,37 @@ module.exports = class LinkedList {
     }
 
     // Método que verifica adiciona um elemento no final da lista linkada:
-    push( element ) {
+    push(element) {
 
-        // instanciando um objeto da classe Node com o elemento inserido na classe:
-        const node = new Node(element)
+        // instanciando um objeto da classe Node com o elemento inserido no método:
+        const node = new Node(element);
 
         // variavel que aponta para o item atual da lista:
         let current;
 
         // verificando se a lista está vazia:
-        if ( this.head == null ) {
+        if (this.head == null) {
 
             this.head = node;
 
         } else {
             
             // armazenando o primeiro item da lista para fazer a iteração:
-            current = this.head
+            current = this.head;
 
             // até chegar ao ultimo a variavel corrente vai ser iterada
-            while ( current.next != null ) {
+            while (current.next != null) {
 
-                current = current.next
+                current = current.next;
 
             }
 
             // atribuindo um novo elemento no next do ultimo atual:
-            current.next = node
+            current.next = node;
 
         }
 
-        this.count++
+        this.count++;
 
     }
 
@@ -93,13 +93,13 @@ module.exports = class LinkedList {
     }
 
     // Método que remove elementos de uma posição especifica da lista ligada:
-    removeAt( index ) {
+    removeAt(index) {
 
         // verifica se o index está dentro do intervalo:
         if (index >= 0 && index < this.count) {
 
             // variavel referente a um valor da lista começando do head:
-            let current = this.head
+            let current = this.head;
 
             // remove o primeiro item:
             if (index === 0) {
@@ -215,7 +215,7 @@ module.exports = class LinkedList {
     // Método que retorna o comprimento da lista:
     size() {
 
-        return this.count
+        return this.count;
 
     }
 
@@ -243,23 +243,40 @@ module.exports = class LinkedList {
 
         }
 
-        // variavel recebendo o primeiro valor atual da fila:
+        // variavel recebendo o primeiro valor atual da lista:
         let objString = `${this.head.element}`;
 
         // variavel que aponta para o primeiro item da lista:
         let current = this.head.next;
 
+        // enquanto estiver menor que o tamanho e o valor corrente não for nulo:
         for (let i=0; i < this.size() && current != null; i++) {
 
+            // atualiza a string formmatada:
             objString = `${objString},${current.element}`;
             
+            // passa para o próximo item
             current = current.next;
 
         }
 
+        // retorna a string formatada:
         return objString;
 
     }
+
+
+    // método que limpa a lista e remove todos os itens:
+    clear() {
+
+        // limpando o atributo referencia ao 1º item
+        this.head = undefined
+
+        // zerando o contador de itens:
+
+    }
+
+    
 
 }
 
@@ -312,3 +329,9 @@ console.log('remove element 18 => ', list.remove(18));
 console.log('list.toString() => ', list.toString());
 
 */
+
+module.exports = {
+    Node: Node,
+    defaultEquals: defaultEquals,
+    LinkedList: LinkedList
+}
