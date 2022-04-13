@@ -98,7 +98,7 @@
     <td class="tg-f8tv">O(1): <br><i>encontrar<br>min e max</i></td>
     <td class="tg-0pky">O(log(n)</td>
     <td class="tg-0pky">O(log(n)</td>
-    <td class="tg-0pky">O(1): </td>
+    <td class="tg-0pky">O(1)</td>
   </tr>
 </tbody>
 </table>
