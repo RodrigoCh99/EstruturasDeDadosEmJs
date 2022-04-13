@@ -29,7 +29,7 @@
 </thead>
 <tbody>
   <tr>
-    <td class="tg-fymr">Array/Queue/Stack</td>
+    <td class="tg-fymr"><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>/<a href="https://github.com/RodrigoCh99/EstruturasDeDadosEmJs/blob/main/estruturas_de_dados/Queue.js">Queue</a>/<a href="https://github.com/RodrigoCh99/EstruturasDeDadosEmJs/blob/main/estruturas_de_dados/Stack.js">Stack</a></td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(n)</td>
@@ -38,7 +38,7 @@
     <td class="tg-0pky">O(n)</td>
   </tr>
   <tr>
-    <td class="tg-fymr">LinkedList</td>
+    <td class="tg-fymr"><a href="https://github.com/RodrigoCh99/EstruturasDeDadosEmJs/blob/main/estruturas_de_dados/LinkedList.js">LinkedList</a></td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(n)</td>
@@ -47,7 +47,7 @@
     <td class="tg-0pky">O(n)</td>
   </tr>
   <tr>
-    <td class="tg-fymr">DoublyLinkedList</td>
+    <td class="tg-fymr"><a href="https://github.com/RodrigoCh99/EstruturasDeDadosEmJs/blob/main/estruturas_de_dados/DoublyLinkedList.js">DoublyLinkedList</a></td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(n)</td>
