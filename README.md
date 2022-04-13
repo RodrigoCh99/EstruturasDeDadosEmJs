@@ -38,7 +38,7 @@
     <td class="tg-0pky">O(n)</td>
   </tr>
   <tr>
-    <td class="tg-fymr">LINKEDLIST</td>
+    <td class="tg-fymr">LinkedList</td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(n)</td>
