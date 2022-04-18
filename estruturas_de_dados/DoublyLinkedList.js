@@ -363,4 +363,4 @@ console.log('list.inverseToString() => ', list.inverseToString());
 console.log('remove element 17 => ', list.remove(17));
 console.log('list.toString() => ', list.toString());
 console.log('list.inverseToString() => ', list.inverseToString());
-/*
+*/
