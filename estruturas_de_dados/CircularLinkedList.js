@@ -78,6 +78,7 @@ class CircularLinkedList extends LinkedList {
 
 }
 
+/*
 const list = new CircularLinkedList();
 
 console.log('push element 15');
@@ -108,3 +109,4 @@ console.log('list.toString() => ', list.toString());
 
 console.log('list.indexOf(14.5) => ', list.indexOf(14.5));
 console.log('list.indexOf(16) => ', list.indexOf(16));
+*/
