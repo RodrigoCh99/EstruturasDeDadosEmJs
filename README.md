@@ -102,3 +102,5 @@
   </tr>
 </tbody>
 </table>
+
+![Commits](https://img.shields.io/github/commit-activity/w/RodrigoCh99/EstruturasDeDadosEmJs)
