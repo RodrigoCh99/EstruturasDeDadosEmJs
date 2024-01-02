@@ -6,107 +6,175 @@ var Node = LinkedListFile.Node;
 var defaultEquals = LinkedListFile.defaultEquals;
 var LinkedList = LinkedListFile.LinkedList;
 
-//  
+// Classe lista encadeada circular
 class CircularLinkedList extends LinkedList {
 
+    // Função construtora de Objetos:
     constructor(equalsFn = defaultEquals) {
+
+        // Importanto a função de comparação da classe LinkedList
         super(equalsFn);
     }
 
-    push(element) {
-        const node = new Node(element);
-        let current;
-        if (this.head == null) {
-            this.head = node; 
-        } else {
-            current = this.getElementAt(this.size() - 1);
-            current.next = node;
-        }
-        node.next = this.head;
-        this.count++;
-    }
-
+    // Método que adiciona elementos de uma posição especifica da lista ligada:
     insert(element, index) {
+
+        // verifica se o index está dentro do intervalo:
         if (index >= 0 && index <= this.count) {
+
+            // criando um Nó da classe Nó
             const node = new Node(element);
+
+            // criando uma variavel que representa o funcionamento atual do head:
             let current = this.head;
+
+            // caso o objetivo seja inserir o elemento na 1ª posição:
             if (index === 0) {
+
+                // se a lista estiver vazia:
                 if (this.head == null) {
+
+                    // adicionando o novo elemento a head da classe
                     this.head = node;
+
+                    // adicionando o próximo nó colo ele mesmo para fazer o circulo na primeira iteração:
                     node.next = this.head;
+                
                 } else {
+
+                    // atribuindo o next do novo nó ao nó head atual:
                     node.next = current;
-                    current = this.getElementAt(this.size());
-                    this.head = node;
+
+                    // pegando o nó no ultimo indice da lista atual
+                    current = this.getElementAt(this.size() - 1);
+                    
+                    // atualizando a classe para o head apontar para o novo nó
+                    this.head = node; 
+
+                    // atualizando o ultimo elemento para apontar para o novo primeiro:
                     current.next = this.head;
+
                 }
             } else {
-                const previous = this.getElementAt(index-1);
-                node.next = previous.next;
+
+                // variavel que armazena o item anterior ao corrente:
+                let previous = this.getElementAt(index- 1);
+
+                // variavel corrente recebe o valor seguinte ao anterior:
+                const current = previous.next;
+
+                // o próximo do nó recebe o valor do item atual:
+                node.next = current;
+
+                // próximo do anterior recebe nó:
                 previous.next = node;
+                
             }
+
             this.count++;
             return true;
+
         }
-        return false;
+
+        return false; 
+
     }
 
+    // Método que remove elementos de uma posição especifica da lista encadeada circular:
     removeAt(index) {
+
+        // verifica se o index está dentro do intervalo:
         if (index >= 0 && index < this.count) {
+
+            // variavel corrente de head da lista:
             let current = this.head;
+
+            // se o objetivo for remover o primeiro item da lista circular:
             if (index === 0) {
+
+                // se só existir ele dentro da lista:
                 if (this.size() === 1) {
+
+                    // define o head da lista como indefinido
                     this.head = undefined;
+
                 } else {
-                    const removed = this.head;
-                    current = this.getElementAt(this.size());
+
+                    // caso não exista só um item na lista:
+                    // variavel recebendo o head atual
+                    const removed = this.head; 
+
+                    // pega o ultimo elemento da lista e atribui a variavel corrente
+                    // aqui é necessário usar size() - 1 senão ela vai suplicar o primeiro item
+                    current = this.getElementAt(this.size() - 1);
+
+                    // atribuindo head ao próximo elemento para acabar com a ligação com o elemento que queremos remover
                     this.head = this.head.next;
+
+                    // apontado o next do ultimo item para o novo head:
                     current.next = this.head;
+
+                    // salvando o elemento removido para retornar ele no futuro
                     current = removed;
+
                 }
+
             } else {
-                const previous = this.getElementAt(index-1);
-                current = previous.next;
+
+                // não há necessidade de atualizar o ultimo elemento da lista circular.
+                const previous = this.getElementAt(index - 1);
+
+                // armazenando o que será removido
+                current = previous.next; 
+
+                // fazendo o nó aterior ao atual apontar para o posterior e não para o atual
                 previous.next = current.next;
+
             }
+
             this.count--;
-            return current.element;
+            return current.element
+
         }
 
         return undefined;
+
     }
 
 }
 
 /*
-const list = new CircularLinkedList();
+// Criando uma instância de CircularLinkedList
+var circularList = new CircularLinkedList();
 
-console.log('push element 15');
-list.push(15);
-console.log('list.toString() => ', list.toString());
+// Testando o método insert
+console.log('Lista Inicial: ', circularList.toString());
 
-console.log('push element 16');
-list.push(16);
-console.log('list.toString() => ', list.toString());
+// Inserindo elementos na lista circular
+console.log('Inserindo 10 na posição 0: ', circularList.insert(10, 0));
+console.log('Lista Atual: ', circularList.toString());
 
-console.log('insert element 14 pos 0 => ', list.insert(14, 0));
-console.log('list.toString() => ', list.toString());
+console.log('Inserindo 20 na posição 0: ', circularList.insert(20, 0));
+console.log('Lista Atual: ', circularList.toString());
 
-console.log('insert element 14.5 pos 1 => ', list.insert(14.5, 1));
-console.log('list.toString() => ', list.toString());
+console.log('Inserindo 30 na posição 1: ', circularList.insert(30, 1));
+console.log('Lista Atual: ', circularList.toString());
 
-console.log('insert element 17 pos 4 => ', list.insert(17, 4));
-console.log('list.toString() => ', list.toString());
+console.log('Inserindo 40 na última posição: ', circularList.insert(40, circularList.size()));
+console.log('Lista Atual: ', circularList.toString());
 
-console.log('list.removeAt(0) => ', list.removeAt(0));
-console.log('list.toString() => ', list.toString());
+// Testando o método removeAt
+console.log('Removendo elemento na posição 0: ', circularList.removeAt(0));
+console.log('Lista Atual: ', circularList.toString());
 
-console.log('list.removeAt(1) => ', list.removeAt(1));
-console.log('list.toString() => ', list.toString());
+console.log('Removendo elemento na posição 1: ', circularList.removeAt(1));
+console.log('Lista Atual: ', circularList.toString());
 
-console.log('list.removeAt(2) => ', list.removeAt(2));
-console.log('list.toString() => ', list.toString());
-
-console.log('list.indexOf(14.5) => ', list.indexOf(14.5));
-console.log('list.indexOf(16) => ', list.indexOf(16));
+console.log('Removendo elemento na última posição: ', circularList.removeAt(circularList.size() - 1));
+console.log('Lista Atual: ', circularList.toString());
 */
+
+
+module.exports = {
+    CircularLinkedList: CircularLinkedList
+}

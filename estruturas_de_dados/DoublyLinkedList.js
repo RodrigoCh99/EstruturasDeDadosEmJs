@@ -24,7 +24,7 @@ class DoublyNode extends Node{
 // Classe Lista duplamente encadeada:
 class DoublyLinkedList extends LinkedList {
 
-    // Funçãoo construtora de Objetos:
+    // Função construtora de Objetos:
     constructor(equalsFn = defaultEquals) {
 
         // Instanciando o atributo comm ovalor da classee mãe:
@@ -247,7 +247,7 @@ class DoublyLinkedList extends LinkedList {
     }
 
     // limpando os itens da lista
-    claer()  {
+    clear()  {
 
         // rodando o clear da classe mãe:
         super.clear();
@@ -364,3 +364,9 @@ console.log('remove element 17 => ', list.remove(17));
 console.log('list.toString() => ', list.toString());
 console.log('list.inverseToString() => ', list.inverseToString());
 */
+
+module.exports = {
+    DoublyNode: DoublyNode,
+    defaultEquals: defaultEquals,
+    DoublyLinkedList: DoublyLinkedList
+}

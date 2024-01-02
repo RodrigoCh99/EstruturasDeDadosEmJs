@@ -8,7 +8,7 @@ class Node {
         this.element = element;
 
         // propriedade que aponta para o próximo nó na lista:
-        this.next = undefined;        
+        this.next = undefined;
     }
 }
 
@@ -19,7 +19,7 @@ function defaultEquals(a, b) {
 
 }
 
-// Classe lista ligada:
+// Classe lista encadeada:
 class LinkedList {
 
     // Função construtora de Objetos:
@@ -51,7 +51,7 @@ class LinkedList {
             this.head = node;
 
         } else {
-            
+
             // armazenando o primeiro item da lista para fazer a iteração:
             current = this.head;
 
@@ -92,7 +92,7 @@ class LinkedList {
 
     }
 
-    // Método que remove elementos de uma posição especifica da lista ligada:
+    // Método que remove elementos de uma posição especifica da lista encadeada:
     removeAt(index) {
 
         // verifica se o index está dentro do intervalo:
@@ -122,7 +122,7 @@ class LinkedList {
 
             // decrementando o contador
             this.count--;
-            
+
             // retornando o elemento removido
             return current.element;
 
@@ -140,7 +140,7 @@ class LinkedList {
 
             const node = new Node(element);
 
-            // caso não o objetivo seja alterar o primeiro elemento:
+            // caso o objetivo seja alterar o primeiro elemento:
             if(index === 0) {
 
                 // variavel que vai armazenar o valor corrente da lista, iniciando do primeiro:
@@ -165,7 +165,7 @@ class LinkedList {
 
                 // próximo do anterior recebe nó:
                 previous.next = node;
-                
+
             }
 
             // atualiza o comprimento da lista:
@@ -176,7 +176,7 @@ class LinkedList {
 
         }
 
-        // caso o index esteja fora do alcance 
+        // caso o index esteja fora do alcance
         return false;
 
     }
@@ -197,7 +197,7 @@ class LinkedList {
 
             current = current.next;
 
-        } 
+        }
 
         return -1;
 
@@ -210,8 +210,8 @@ class LinkedList {
 
         return this.removeAt(index);
 
-    } 
-    
+    }
+
     // Método que retorna o comprimento da lista:
     size() {
 
@@ -254,7 +254,7 @@ class LinkedList {
 
             // atualiza a string formmatada:
             objString = `${objString},${current.element}`;
-            
+
             // passa para o próximo item
             current = current.next;
 
@@ -276,7 +276,7 @@ class LinkedList {
 
     }
 
-    
+
 
 }
 
