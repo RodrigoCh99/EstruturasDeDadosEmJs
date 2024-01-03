@@ -103,4 +103,6 @@
 </tbody>
 </table>
 
-![Commits](https://img.shields.io/github/commit-activity/w/RodrigoCh99/EstruturasDeDadosEmJs)
+## **Estruturas de dados Interessantes que não estão implementadas no livro**
+
+- **Multiset (bag ou mset):** um multiconjunto é a generalização de um conjunto, de tal forma que permite a repetição de elementos.
