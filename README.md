@@ -106,7 +106,7 @@
 
 ## **Estruturas de dados Interessantes que não estão no livro mas foram implementadas**
 
-[ ] **Multiset (bag ou mset):** um multiconjunto é a generalização de um conjunto, de tal forma que permite a repetição de elementos.
-[ ] **Hashset:** um conjunto com função de espalhamento.
-[ ] **DoubleHashTable:** hashtable que usa função de espalhamento dupla para lidar com colisões.
-[ ] **NestedHashTable:** hashtable que usa aninhamento de tabelas de espalhamento para lidar com colições e armazenar dados em hierarquia.
+- [ ] **Multiset (bag ou mset):** um multiconjunto é a generalização de um conjunto, de tal forma que permite a repetição de elementos.
+- [ ] **Hashset:** um conjunto com função de espalhamento.
+- [ ] **DoubleHashTable:** hashtable que usa função de espalhamento dupla para lidar com colisões.
+- [ ] **NestedHashTable:** hashtable que usa aninhamento de tabelas de espalhamento para lidar com colições e armazenar dados em hierarquia.
