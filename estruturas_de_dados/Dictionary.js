@@ -244,3 +244,9 @@ dictionary.forEach((k, v) => {
 });
 
 */
+
+module.exports = {
+    ValuePair: ValuePair,
+    Dictionary: Dictionary, 
+    defaultToString: defaultToString
+}
