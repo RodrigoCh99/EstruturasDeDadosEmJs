@@ -57,12 +57,39 @@ class HashTable {
 
     }
 
+    djb2HashCode(key) {
+
+        // caso a key não seja numerica ela deve ser convertida em string com a função inserida
+        const tableKey = this.toStrFn(key);
+
+        // variavel armazenando um nº primo
+        let hash = 5381;
+        
+        // percorrendo a string e pegando seu ASCII e somando com o das letras anteriores
+        for (let i = 0; i < tableKey.length; i++) {
+
+            hash = (hash * 33) + tableKey.charCodeAt(i);
+
+        }
+
+        // dividindo o valor encontrado por outro nº primo
+        return hash % 1013;
+
+    }
+
 
     // Método que aplica a função hash criada
     hashCode(key) {
 
+
         // aplicação da função loseloseHashCode da própria classe
-        return this.loseloseHashCode(key);
+        //return this.loseloseHashCode(key);
+
+        
+
+        // aplicação da função djb2 da própria classe
+        return this.djb2HashCode(key);
+
     }
 
     // Método que recebe uma chave e um valor e insere ou atualiza um item na tabela hash com base nisso
@@ -176,17 +203,16 @@ var hash = new HashTable();
 hash.put('Gandalf', 'gandalf@email.com');
 hash.put('John', 'johnsnow@email.com');
 hash.put('Tyrion', 'tyrion@email.com');
+//console.log(hash.hashCode('Gandalf') + ' - Gandalf');
+//console.log(hash.hashCode('John') + ' - John');
+//console.log(hash.hashCode('Tyrion') + ' - Tyrion');
 
-console.log(hash.hashCode('Gandalf') + ' - Gandalf');
-console.log(hash.hashCode('John') + ' - John');
-console.log(hash.hashCode('Tyrion') + ' - Tyrion');
-
-console.log(hash.get('Gandalf'));
-console.log(hash.get('Loiane'));
-console.log(hash.get('Rodrigo'));
+//console.log(hash.get('Gandalf'));
+//console.log(hash.get('Loiane'));
+//console.log(hash.get('Rodrigo'));
 
 hash.remove('Gandalf');
-console.log(hash.get('Gandalf'));
+//console.log(hash.get('Gandalf'));
 
 var hash = new HashTable();
 hash.put('Ygritte', 'ygritte@email.com');

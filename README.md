@@ -106,6 +106,7 @@
 
 ## **Estruturas de dados Interessantes que não estão no livro mas foram implementadas**
 
+- [ ] **Priority queue:** uma fila em que o objeto possui uma prioridade associada quando é inserido na fila.
 - [ ] **Multiset (bag ou mset):** um multiconjunto é a generalização de um conjunto, de tal forma que permite a repetição de elementos.
 - [ ] **Hashset:** um conjunto com função de espalhamento.
 - [ ] **DoubleHashTable:** hashtable que usa função de espalhamento dupla para lidar com colisões.

@@ -7,7 +7,7 @@ var defaultToString = DictionaryFile.defaultToString;
 var ValuePair = DictionaryFile.ValuePair;
 var LinkedList = LinkedListFile.LinkedList;
 
-// Definição da classe tabela de espalhamento de cadeia encadeada
+// Definição da classe tabela de espalhamento que resolve colisões com lista encadeada
 class HashTableSeparateChaining {
 
     // Função construtora de Objetos:
