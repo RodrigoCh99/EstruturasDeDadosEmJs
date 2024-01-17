@@ -90,6 +90,7 @@ class SortedLinkedList extends LinkedList {
     }
 }
 
+/*
 // Criando uma instância de SortedLinkedList
 var sortedList = new SortedLinkedList();
 
@@ -111,3 +112,10 @@ console.log('Lista Atual: ', sortedList.toString());
 
 console.log('Inserindo 40: ', sortedList.insert(40));
 console.log('Lista Atual: ', sortedList.toString());
+*/
+
+module.exports = {
+    Compare: Compare,
+    defaultCompare: defaultCompare,
+    SortedLinkedList: SortedLinkedList,
+}
