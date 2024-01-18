@@ -56,7 +56,7 @@
     <td class="tg-0pky">O(n)</td>
   </tr>
   <tr>
-    <td class="tg-fymr">HashTable</td>
+    <td class="tg-fymr"><a href="https://github.com/RodrigoCh99/EstruturasDeDadosEmJs/blob/main/estruturas_de_dados/HashTable.js">HashTable</a></td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(1)</td>
     <td class="tg-0pky">O(1)</td>
@@ -65,7 +65,7 @@
     <td class="tg-0pky">O(n)</td>
   </tr>
   <tr>
-    <td class="tg-fymr">BinarySearchTree</td>
+    <td class="tg-fymr"><a href="https://github.com/RodrigoCh99/EstruturasDeDadosEmJs/blob/main/estruturas_de_dados/BinarySearchTree.js">BinarySearchTree</a></td>
     <td class="tg-0pky">O(log(n)</td>
     <td class="tg-0pky">O(log(n)</td>
     <td class="tg-0pky">O(log(n)</td>
@@ -111,3 +111,5 @@
 - [ ] **Hashset:** um conjunto com função de espalhamento.
 - [ ] **DoubleHashTable:** hashtable que usa função de espalhamento dupla para lidar com colisões.
 - [ ] **NestedHashTable:** hashtable que usa aninhamento de tabelas de espalhamento para lidar com colições e armazenar dados em hierarquia.
+- [ ] **Hashed Array Tree:** Árvore que soluciona o problemas do array statico (aumento de comprimento) de forma mais performática que o array de comprimento variavel.
+- [ ] **Rope:** estrutura baseada em árvores que serve para armazenar strings longas.
